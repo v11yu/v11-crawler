@@ -43,7 +43,7 @@ public class Loginer extends BasicHttpMethod {
 	private final String username = "wuwangyu@software.ict.ac.cn";
 	private final String pwd = "fjndwy";
 	private final String successUrl = "http://yszsjs2.cas.cn/question.action?qno=2";
-	private final String cookieString = "Hm_lvt_4066ff3539577ca0df4e65f3937c5caf=1413898318,1413901520; JSESSIONID=787AF60E088FD9392331AB64DF053C04.164tc1; 3455=app2; Hm_lpvt_4066ff3539577ca0df4e65f3937c5caf=1413904318";
+	private final String cookieString = "Hm_lvt_4066ff3539577ca0df4e65f3937c5caf=1413898318,1413901520; JSESSIONID=787AF60E088FD9392331AB64DF053C04.164tc1; 3455=app2; Hm_lpvt_4066ff3539577ca0df4e65f3937c5caf=1413907260";
 
 	public boolean login() {
 		try {
@@ -80,8 +80,7 @@ public class Loginer extends BasicHttpMethod {
 		String ls[] = str.split(";");
 		for (String tmp : ls) {
 			String v[] = tmp.split("=");
-			BasicClientCookie c = new BasicClientCookie(v[0], v[1]);
-			Cookie cookie = new Cookie(c);
+			Cookie cookie = new Cookie("http://yszsjs2.cas.cn/",v[0], v[1]);
 			client.getCookieManager().addCookie(cookie);
 		}
 		return;
